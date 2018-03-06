@@ -1,0 +1,60 @@
+﻿@model PaginationTagHelper.AspNetCore.Web.ViewModels.ProductViewModel
+
+@{
+    ViewData["Title"] = "Pagination Tag Helper";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="jumbotron">
+            <h2>Custom Pagination Tag Helper</h2>
+            <p>ASP.NET Core 2.0 MVC | Bootstrap 3</p>
+            <p>
+                <a class="btn btn-primary" href="@Url.Action("Index", "Home")" role="button">Data grid (full page reload)</a>
+                <a class="btn btn-default" href="@Url.Action("AjaxGrid", "Home")" role="button">Data grid (ajax partial update)</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Sample data grid:</h4>
+        <div class="jumbotron">
+            <form id="frmPageSize" 
+                  name="frmPageSize" 
+                  class="form-inline" 
+                  style="margin-bottom:10px"
+                  asp-controller="Home" 
+                  asp-action="Index"
+                  method="post" 
+                  onchange="DoPostBack()">
+
+                <input type="hidden" id="page" name="page" value="@Model.Products.CurrentPage" />
+
+                <div class="form-group">
+                    <label for="pageSize">Page size:</label>
+                    <select name="pageSize" id="pageSize" class="form-control">
+                        <option value="5" selected="@(Model.Products.PageSize == 5)">5</option>
+                        <option value="10" selected="@(Model.Products.PageSize == 10)">10</option>
+                        <option value="15" selected="@(Model.Products.PageSize == 15)">15</option>
+                        <option value="20" selected="@(Model.Products.PageSize == 20)">20</option>
+                    </select>
+                </div>
+            </form>
+
+            @{Html.RenderPartial("_PagedListPartialView", Model);}
+
+        </div>
+    </div>
+</div>
+
+@section Head  {
+    <script defer>
+        function DoPostBack() {
+            var select = document.querySelector("#pageSize");
+            var option = select.options[select.selectedIndex];
+            document.frmPageSize.submit();
+        }
+    </script>
+}

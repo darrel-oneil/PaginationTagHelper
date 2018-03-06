@@ -1,0 +1,51 @@
+﻿@model PaginationTagHelper.AspNetCore.Web.ViewModels.ProductViewModel
+
+<div class="mask-container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>SKU</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.Products.Results)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Name</td>
+                    <td>@p.Price</td>
+                    <td>@p.SKU</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <pager-info page="Model.Products.CurrentPage"
+            page-size="Model.Products.PageSize"
+            total-items="Model.Products.TotalItemCount" 
+            text-mode="ShowPageNumbers">
+        </pager-info>
+
+        <pager link-url="@Url.Action("Pager","Home")"
+            page="Model.Products.CurrentPage"
+            page-size="Model.Products.PageSize"
+            total-items="Model.Products.TotalItemCount">
+        </pager>
+
+        <pager-info page="Model.Products.CurrentPage"
+            page-size="Model.Products.PageSize"
+            total-items="Model.Products.TotalItemCount" 
+            text-mode="ShowPageItems">
+        </pager-info>
+    </div>
+</div>
+
+
+
+
