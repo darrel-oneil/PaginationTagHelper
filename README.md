@@ -1,2 +1,2 @@
 # PaginationTagHelper
-Customer ASP.NET Core 2.0 Tag Helper
+Custom Pagination Tag Helper - ASP.NET Core 2.0
