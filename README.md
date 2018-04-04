@@ -47,4 +47,4 @@ To use the paging tag helper with ajax you just need to nest an `<ajax-options><
 
 
 # Sample Web application
-Please refer to the sample *PaginationTagHelper.AspNetCore.Web* application in this repo which helps demonstrate how the pagination tag helper can be used. This web project current uses Bootstrap 3.3.
+Please refer to the sample *PaginationTagHelper.AspNetCore.Web* application in this repo which helps demonstrate how the pagination tag helper can be used. This web project currently uses Bootstrap 3.3.
