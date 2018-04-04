@@ -9,7 +9,7 @@ namespace PaginationTagHelper.AspNetCore.Application.Services
 {
     public class InMemoryDataService : IDataService
     {
-        static IList<Product> _dataSource;
+        IList<Product> _dataSource;
 
         public InMemoryDataService()
         {

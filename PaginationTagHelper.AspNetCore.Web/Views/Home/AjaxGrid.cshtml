@@ -6,12 +6,12 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <div class="jumbotron">
+        <div class="jumbotron text-center">
             <h2>Custom Pagination Tag Helper</h2>
-            <p>ASP.NET Core 2.0 MVC | Bootstrap 3</p>
+            <p>ASP.NET Core 2.0 MVC | Bootstrap 3.3</p>
             <p>
-                <a class="btn btn-default" href="@Url.Action("Index", "Home")" role="button">Data grid (full page reload)</a>
-                <a class="btn btn-primary" href="@Url.Action("AjaxGrid", "Home")" role="button">Data grid (ajax partial update)</a>
+                <a class="btn btn-default" asp-controller="Home" asp-action="Index" role="button">Data grid (full page reload)</a>
+                <a class="btn btn-primary" asp-controller="Home" asp-action="AjaxGrid" role="button">Data grid (ajax partial update)</a>
             </p>
         </div>
     </div>
@@ -19,24 +19,22 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h4>Sample ajax data grid:</h4>
         <div class="jumbotron">
-
-            <form id="frmPageSize" 
-                  name="frmPageSize" 
-                  class="form-inline" 
-                  style="margin-bottom:10px" 
-                  asp-controller="Home" 
-                  asp-action="AjaxPager" 
-                  data-ajax="true" 
-                  data-ajax-update="#pagedContent" 
+            <form id="frmPageSize"
+                  name="frmPageSize"
+                  class="form-inline text-center"
+                  style="margin-bottom:10px"
+                  asp-controller="Home"
+                  asp-action="AjaxPager"
+                  data-ajax="true"
+                  data-ajax-update="#pagedContent"
                   data-ajax-method="post">
 
                 <input type="hidden" id="page" name="page" value="@Model.Products.CurrentPage" />
-                
+
                 <div class="form-group">
-                    <label for="pageSize">Page size:</label>
-                    <select name="pageSize" id="pageSize" class="form-control" onchange="$(this.form).submit();">
+                    <label for="pageSize">Page size: </label>
+                    <select name="pageSize" id="pageSize" class="form-control">
                         <option value="5" selected="@(Model.Products.PageSize == 5)">5</option>
                         <option value="10" selected="@(Model.Products.PageSize == 10)">10</option>
                         <option value="15" selected="@(Model.Products.PageSize == 15)">15</option>
@@ -53,26 +51,36 @@
     </div>
 </div>
 
-@section Head  {
+@section Scripts {
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/js/page-size-select.js"></script>
     <script>
         /* ------------------------------------ */
         /* Show the ajax loader                 */
         /* ------------------------------------ */
         function showAjaxLoader() {
-            $('table').addClass('loading');
+            var table = document.querySelector('table');
+            if (table) {
+                table.classList.add('loading');
+            }
+            else {
+                console.error('Error in displaying ajax loader.');
+            }
         }
 
         /* ------------------------------------ */
         /* Hide the ajax loader                 */
         /* ------------------------------------ */
         function hideAjaxLoader() {
-            $('table').removeClass('loading');
+            var table = document.querySelector('table');
+            if (table) {
+                table.classList.remove('loading');
+            }
+            else {
+                console.error('Error hiding ajax loader.');
+            }
         }
     </script>
-}
-
-@section Scripts {
-    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.js"></script>
 }
 
 
