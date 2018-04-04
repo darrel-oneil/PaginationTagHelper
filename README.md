@@ -1,6 +1,6 @@
 # PaginationTagHelper.AspNetCore
 
-An easy to use paging tag helper with ajax support and Bootstrap 3 generated markup. 
+An easy to use paging tag helper with ajax support and Bootstrap 4.0 generated markup. 
 
 ![Alt text](https://user-images.githubusercontent.com/2548239/37115229-74da5bc0-2242-11e8-8684-331891b2d8c2.png "Bootstrap 3 Paging Markup")
 
@@ -47,4 +47,4 @@ To use the paging tag helper with ajax you just need to nest an `<ajax-options><
 
 
 # Sample Web application
-Please refer to the sample *PaginationTagHelper.AspNetCore.Web* application in this repo which helps demonstrate how the pagination tag helper can be used.
+Please refer to the sample *PaginationTagHelper.AspNetCore.Web* application in this repo which helps demonstrate how the pagination tag helper can be used. This web project current uses Bootstrap 3.3.
