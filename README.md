@@ -1,12 +1,43 @@
 # PaginationTagHelper.AspNetCore
 
-An easy to use paging tag helper with ajax support and Bootstrap 4.0 generated markup.
+A paging tag helper for ASP.NET Core 2.0 with ajax support and Bootstrap 4.0 generated markup.
+
+Installation
+---
+The Pagination Tag Helper is available as a [NuGet](https://www.nuget.org/packages/PaginationTagHelper.AspNetCore/) package.
+
+
+To install from the package manager
+
+```
+PM> Install-Package PaginationTagHelper.AspNetCore
+```
+
+To install from the .NET CLI
+
+```
+> dotnet add package PaginationTagHelper.AspNetCore
+```
+
+Usage
+---
+In your ASP.NET Core Web Application add the following line to *_ViewImports.cshtml*
+
+```
+@addTagHelper *, PaginationTagHelper.AspNetCore
+```
+
+Add a ```<pager>/<pager>``` tag to your view. For example:
+
+```
+<pager link-url="/home/index" page="1" page-size="10" total-items="100"></pager>
+```
 
 Please refer to the sample *PaginationTagHelper.AspNetCore.Web* application in this repo for an example on how you can use this tag helper in your own projects.
 
 The sample web project currently uses Bootstrap 3.3.
 
-Paging tag helper attributes (required)
+Pager tag helper attributes (required)
 ---
 | Attribute | Description | Example
 | :--- | :--- | :---
