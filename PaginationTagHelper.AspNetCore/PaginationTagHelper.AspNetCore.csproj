@@ -4,6 +4,12 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <Authors>Darrel O'Neil</Authors>
     <Company />
+    <Description>A paging tag helper for ASP.NET Core 2.0 with ajax support and Bootstrap 4.0 generated markup.</Description>
+    <PackageProjectUrl>https://github.com/darrel-oneil/PaginationTagHelper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/darrel-oneil/PaginationTagHelper</RepositoryUrl>
+    <PackageTags>aspnetcore, mvc, taghelper, tag, helper, paging, pagination, bootstrap3, bootstrap4</PackageTags>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/darrel-oneil/PaginationTagHelper/master/LICENSE</PackageLicenseUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
