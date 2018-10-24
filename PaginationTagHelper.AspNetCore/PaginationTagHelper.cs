@@ -190,9 +190,6 @@ namespace PaginationTagHelper.AspNetCore
 
                 output.Content.AppendHtml("</ul>");
             }
-
-            output.PostContent.SetHtmlContent("</nav>");
-            output.TagName = "nav";
         }
 
         /// <summary>
