@@ -10,6 +10,8 @@
     <PackageTags>aspnetcore, mvc, taghelper, tag, helper, paging, pagination, bootstrap3, bootstrap4</PackageTags>
     <PackageLicenseUrl>https://raw.githubusercontent.com/darrel-oneil/PaginationTagHelper/master/LICENSE</PackageLicenseUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Minor bug fix: Tag helper was rendering an extra &lt;/nav&gt; html tag.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
